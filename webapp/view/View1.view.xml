@@ -1,0 +1,147 @@
+<mvc:View controllerName="project2basic.controller.View1"
+    xmlns="sap.ui.table"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:u="sap.ui.unified"
+	xmlns:c="sap.ui.core"
+	xmlns:m="sap.m">
+
+	<Table id="_IDGenTable1"
+				rows="{path: '/Product', parameters: {expand: 'CATEGORY'}}"
+				selectionMode="MultiToggle"
+				paste="onPaste"
+				ariaLabelledBy="title"
+				enableSelectAll="false"
+				visibleRowCount = "20"
+				alternateRowColors = "true"
+				editable = "true"
+				>
+				
+				<extension>
+					<m:Panel id="_IDGenPanel1" >
+						<m:OverflowToolbar id="_IDGenOverflowToolbar1" style="Clear">
+						
+							<m:Title id="title" text="PRODUCTS"/>
+
+							<m:ToolbarSpacer id="_IDGenToolbarSpacer1"/>
+
+							<m:Button id="_IDGenButton1" icon="sap-icon://add" press="pressButton"></m:Button>
+							<m:Button id="_IDGenButton3" icon="sap-icon://edit" press="pressButton1"></m:Button>
+							<m:Button id="_IDGenButton2" icon="sap-icon://delete" press="pressEliminar"></m:Button>
+							<m:Select id="_IDGenSelect1" change="onChangeTheme">
+    							<c:Item id="_IDGenItem1" key="sap_fiori_3" text="Fiori 3"/>
+    							<c:Item id="_IDGenItem2" key="sap_fiori_3_dark" text="Fiori 3 Dark"/>
+								<c:Item id="_IDGenItem3" key="sap_morning_horizon" text="Mode Claro"/>
+								
+							</m:Select>
+						</m:OverflowToolbar>
+					</m:Panel>
+				</extension>
+				
+				<columns>
+					<Column id="_IDGenColumn1" sortProperty="NAME_PRODUCT" filterProperty="NAME_PRODUCT" >
+						<m:Label id="_IDGenLabel1" text="Product Name" />
+						<template>
+							<m:Text id="_IDGenText1" text="{NAME_PRODUCT}" wrapping="false" />
+						</template>
+					</Column>
+					<Column id="_IDGenColumn2" sortProperty="PRICE" filterProperty="PRICE" >
+						<m:Label id="_IDGenLabel2" text="Price" />
+						<template>
+							<m:ObjectStatus id="_IDGenObjectStatus2" text="{PRICE}" state="{
+								path: 'PRICE',
+								formatter: '.formatAvailableToObjectState'
+							}"/>
+							
+						</template>
+					</Column>
+					<Column id="_IDGenColumn3" sortProperty="STOCK" filterProperty="STOCK">
+						<m:Label id="_IDGenLabel3" text="STOCK" />
+						<template>
+							
+							<m:ObjectStatus id="_IDGenObjectStatus3" text="{STOCK}" state="{
+								path: 'STOCK',
+								formatter: '.formatAvailableToObjectStateStock'
+							}"/>
+						</template>
+					</Column>
+					<Column id="_IDGenColumn4" sortProperty="CATEGORY/NAME_CATEGORY" filterProperty="CATEGORY/NAME_CATEGORY">
+						<m:Label id="_IDGenLabel5" text="Categoria" />
+						<template>
+							<m:Text id="_IDGenObjectStatus1" text="{CATEGORY/NAME_CATEGORY}"/>
+						</template>
+					</Column>
+
+					
+				</columns>
+			</Table>
+
+<m:Dialog id="dialog1"  title="Añadir nuevo producto" >
+        <m:content>
+            <m:Panel id="_IDGenPanel552">
+			<f:SimpleForm id="_IDGenSimpleForm1" editable="true" layout="ColumnLayout" columnsM="1" columnsL="1" columnsXL="1">
+				<f:content>
+                <m:Label id="_IDGenLabelSeason" text="Name"/>
+                <m:Input id="name" type="Text"  editable="true" placeholder="Introduce el nombre" />
+ 
+                <m:Label id="_IDGenLabel332" text="Price" />
+
+                <m:Input id="price" type="Text" placeholder="Introduce el precio" />
+
+				<m:Label id="_IDGenLabel334" text="Categoria" />
+				
+				<m:ComboBox id="category" selectedKey="{ID_CATEGORY}" placeholder="	Selecciona una categoria" value="{Category}" items="{/Category}">
+					<c:Item key="{ID_CATEGORY}" id="item_category" text="{NAME_CATEGORY}"/>
+				</m:ComboBox>
+
+				</f:content>				
+				
+
+			</f:SimpleForm>
+
+			</m:Panel>
+		
+            
+        </m:content>
+        <m:beginButton>
+            <m:Button id="_IDGenButton252" text="Guardar" press="onSaveCareerPlan" />
+        </m:beginButton>
+        <m:endButton>
+            <m:Button id="_IDGenButton323" text="Cancelar" press="onCancelCareerPlan" />
+        </m:endButton>
+    </m:Dialog>
+
+
+<m:Dialog id="dialog2"  title="Editar producto" >
+        <m:content>
+            <m:Panel id="_IDGenPanel553">
+			<f:SimpleForm id="_IDGenSimpleForm2" editable="true" layout="ColumnLayout" columnsM="1" columnsL="1" columnsXL="1">
+				<f:content>
+                <m:Label id="_IDGenLabelSeason1" text="Name"/>
+                <m:Input id="name1" type="Text"  editable="true" placeholder="Introduce el nombre" />
+
+				<m:Label id="_IDGenLabel335" text="Categoria" />
+				
+				<m:ComboBox id="category1" selectedKey="{ID_CATEGORY}" placeholder="	Selecciona una categoria" value="{Category}" items="{/Category}">
+					<c:Item key="{ID_CATEGORY}" id="item_category1" text="{NAME_CATEGORY}"/>
+				</m:ComboBox>
+
+				</f:content>				
+				
+
+			</f:SimpleForm>
+
+			</m:Panel>
+		
+            
+        </m:content>
+        <m:beginButton>
+            <m:Button id="_IDGenButton253" text="Guardar" press="onSaveProduct" />
+        </m:beginButton>
+        <m:endButton>
+            <m:Button id="_IDGenButton324" text="Cancelar" press="onCancelProdut" />
+        </m:endButton>
+    </m:Dialog>
+
+
+</mvc:View>

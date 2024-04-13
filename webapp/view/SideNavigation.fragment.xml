@@ -1,0 +1,39 @@
+<SideNavigation xmlns="sap.tnt" xmlns:core="sap.ui.core" expanded="false" selectedKey="root1" itemSelect="onItemSelect">
+	<NavigationList items="3">
+		<NavigationListItem xmlns="sap.tnt" text="Perfil" icon="sap-icon://employee" enabled="true" expanded="false" items="2"
+					key="root1">
+			<NavigationListItem text="Organigrama" key="root1" enabled="true" />
+			<NavigationListItem text="Descripción de cargo" key="root1" enabled="true" />
+		</NavigationListItem>
+
+		<NavigationListItem xmlns="sap.tnt" text="Programa puntos" icon="sap-icon://education" enabled="true" expanded="false"
+					key="root2">
+					<NavigationListItem text="Subir evidencias" key="root2" enabled="true" />
+		</NavigationListItem>
+
+		<NavigationListItem xmlns="sap.tnt" text="Competencia" icon="sap-icon://competitor" enabled="true" expanded="true" items="2">
+			<NavigationListItem text="Inducciones" key="root3" enabled="true" />
+			<NavigationListItem text="Capacitación/Entrenamiento" key="root3" enabled="true" />
+		</NavigationListItem>
+
+		<NavigationListItem xmlns="sap.tnt" text="Toma de Conciencia" icon="sap-icon://collaborate" enabled="true" expanded="true" items="2">
+			<NavigationListItem text="Conocimientos clave" key="root4" enabled="true" />
+			<NavigationListItem text="Beneficios" key="root4" enabled="true" />
+		</NavigationListItem>
+
+		<NavigationListItem xmlns="sap.tnt" text="Evaluaciones" icon="sap-icon://customer-order-entry" enabled="true" expanded="true" items="3">
+			<NavigationListItem text="Evaluación de desempeño" key="root5" enabled="true" />
+			<NavigationListItem text="Evaluación de pasantía" key="root5" enabled="true" />
+			<NavigationListItem text="Evaluación de retiro" key="root5" enabled="true" />
+		</NavigationListItem>
+
+	</NavigationList>
+	<fixedItem>
+		<NavigationList items="1">
+			
+			<!--<core:Fragment
+					fragmentName="sap.f.sample.ShellBarWithSplitApp.view.NavigationList"
+					type="XML" />-->
+		</NavigationList>
+	</fixedItem>
+</SideNavigation>
